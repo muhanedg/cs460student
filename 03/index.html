@@ -43,27 +43,10 @@
         cube = new THREE.Mesh( geometry1, material1);
         scene.add(cube);
 
-        // geometry1 = new THREE.CircleGeometry( 20.00, 20, 20.00, 20.00 );
-        // material1 = new THREE.MeshStandardMaterial( { color: 0xffffff} );
-        // circle = new THREE.Mesh( geometry1, material1 );
-        // scene.add( circle );
-
-        var x = Math.random(1,5);
-
-        if (x = 1) {
+        
 
 
-        geometry = new THREE.ConeGeometry( 20.00, 20.00, 32 );
-        material = new THREE.MeshStandardMaterial( {color: 0xffffff} );
-        cone = new THREE.Mesh( geometry, material );
-        scene.add( cone );
-      } else if (x = 2) {
-        geometry1 = new THREE.CircleGeometry( 20.00, 20, 20.00, 20.00 );
-        material1 = new THREE.MeshStandardMaterial( { color: 0xffffff} );
-        circle = new THREE.Mesh( geometry1, material1 );
-        scene.add( circle );
-        }
-  
+        
  
         //
         // The invisible plane
@@ -118,7 +101,58 @@
 
 
           // use an if statement to assign random var
-           geometry = new THREE.ConeGeometry( 20.00, 20.00, 32 );
+
+
+        // found on stack overflow
+        const generateRandomNumber = (min, max) =>  {
+              return Math.floor(Math.random() * (max - min) + min);
+          };
+            console.log(generateRandomNumber(1, 5));
+
+
+
+        // var x = Math.floor(Math.random() * 5);
+        // console.log(x);
+        x = generateRandomNumber;
+        if (x = 1) {
+
+
+        geometry = new THREE.ConeGeometry( 20.00, 20.00, 32 );
+        material = new THREE.MeshStandardMaterial( {color: 0xffffff} );
+        cone = new THREE.Mesh( geometry, material );
+        scene.add( cone );
+        } else if (x = 2) {
+          geometry1 = new THREE.CircleGeometry( 20.00, 20, 20.00, 20.00 );
+          material1 = new THREE.MeshStandardMaterial( { color: 0xffffff} );
+          circle = new THREE.Mesh( geometry1, material1 );
+          scene.add( circle );
+         } else if (x = 3) {
+          geometry2 = new THREE.BoxBufferGeometry( 50, 50, 20);
+          material2 = new THREE.MeshStandardMaterial({ color: 0xffffff });
+          cube = new THREE.Mesh( geometry1, material1);
+          scene.add(cube);
+
+         } else if (x = 4) {
+           geometry3 = new THREE.TorusGeometry( 10, 3, 16, 100 );
+           material3 = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+           torus = new THREE.Mesh( geometry, material );
+           scene.add( torus );
+
+         } else if (x = 5) {
+
+           geometry4 = new THREE.CylinderGeometry( 5, 5, 20, 32 );
+           material4 = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+           cylinder = new THREE.Mesh( geometry, material );
+           scene.add( cylinder );
+
+         }
+
+  
+
+
+
+
+        geometry = new THREE.ConeGeometry( 20.00, 20.00, 32 );
         material = new THREE.MeshStandardMaterial( {color: 0xffffff} );
         cone = new THREE.Mesh( geometry, material );
 

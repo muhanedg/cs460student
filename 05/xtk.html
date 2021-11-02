@@ -1,0 +1,90 @@
+<html>
+  <head>
+  	<style>
+		html, body { 
+		background-color:#000;
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden !important; 
+	  }
+  	</style>
+  	<script type="text/javascript" src="https://get.goXTK.com/xtk_edge.js"></script>
+
+	<script type="text/javascript" src="https://get.goXTK.com/xtk_xdat.gui.js"></script>
+  	<script type="text/javascript">
+  		
+  		window.onload = function() {
+
+  			r= new X.renderer3D();
+  			r.init();
+
+  			c = new X.cube();
+
+  			r.add( c );
+
+
+  			r. render();
+
+
+  			var gui = new dat.GUI();
+  			var cubeGUI = gui.addFolder('cube');
+
+
+  			cubeGUI.add(c, 'visible');
+  			cubeGUI.addColor(c, 'color');
+  			cubeGUI.add(c, 'opacity', 0, 1);
+
+  			cubeGUI.add(c, 'lengthX', 0, 100).onChange(function() {
+  				c.modified();
+  			})
+  			cubeGUI.add(c, 'lengthY', 0, 100).onChange(function() {
+  				c.modified();
+  			})
+  			cubeGUI.add(c, 'lengthZ', 0, 100).onChange(function() {
+  				c.modified();
+  			})
+
+  			var controller = {
+
+  				'rotateX': function() {
+
+  					c.transform.rotateX(10);
+
+  				}
+  			};
+
+  			var controller = {
+
+  				'rotateY': function() {
+
+  					c.transform.rotateY(10);
+
+  				}
+  			};
+
+
+  			cubeGUI.add(controller, 'rotateX');
+  			cubeGUI.add(controller,'rotateY');
+
+
+  			cubeGUI.open();
+
+
+
+
+
+  		}
+
+
+
+
+
+
+  	</script>
+  </head>
+  <body>
+  	
+
+  </body>
+</html>
